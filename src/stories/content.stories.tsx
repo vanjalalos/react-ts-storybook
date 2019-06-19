@@ -4,4 +4,4 @@ import { storiesOf } from "@storybook/react";
 
 storiesOf("Content", module)
   .add("Content", () => <Content />)
-  .addParameters({ viewport: { defaultViewport: "iphone6" } });
+  .addParameters({ viewport: { defaultViewport: "kindleFire2" } });
