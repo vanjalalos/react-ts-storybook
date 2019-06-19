@@ -6,4 +6,6 @@ import Navigation from "../components/Navigation";
 
 import "bootstrap/dist/css/bootstrap.css";
 
-storiesOf("Navigation", module).add("Simple Navigation", () => <Navigation />);
+storiesOf("Navigation", module)
+  .add("Simple Navigation", () => <Navigation />)
+  .addParameters({ viewport: { defaultViewport: "kindleFire2" } });
