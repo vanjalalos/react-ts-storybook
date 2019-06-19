@@ -1,15 +1,18 @@
-import * as React from 'react';
+import * as React from "react";
 
+interface IButton {
+  buttonText: string;
+  handleClick?: () => void;
+}
 
-const Button =()=>{
-    return(
-        <div>
-        <button className="nav-link js-scroll-trigger">
-        About
-        </button>
-      
-      </div>
-    )
+const ToggleText = ({ buttonText, handleClick }: IButton) => {
+  return (
+    <div>
+      <button className='nav-link js-scroll-trigger' onClick={handleClick}>
+        {buttonText}
+      </button>
+    </div>
+  );
 };
 
-export default Button
+export default ToggleText;
