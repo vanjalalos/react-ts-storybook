@@ -12,31 +12,33 @@ import {
 const stories = storiesOf("Items", module);
 stories.addDecorator(withKnobs);
 
-const label = "Styles";
-
-const defaultValue = {
-  backgroundColor: "width",
-  fontSize: "15px",
-  font: "bold"
-};
-const groupId = "GROUP-1";
-
-const value = object(label, defaultValue, groupId);
-
 stories
   .add("Item without light", () => {
-    const title = text("Title", "EXPERIENCE AND DEDICATION");
-    const textNote = text(
+    const name = text("Name", "klug+milke");
+    const age = number("Age", 2014);
+
+    const label = "Styles";
+    const defaultValue = {
+      backgroundColor: "yellow",
+      fontSize: "16px",
+      font: "bold"
+    };
+    const groupId = "GROUP-ID1";
+
+    const content = text(
       "Text",
-      "klug+milke was founded 2014 by serial IT entrepreneurs and creators of award-winning web applications. We have 20+ years of experience in the planning, architecture, development, roll-out and management of large-scale enterprise e-commerce solutions. Since 2005 our focus is on the financial sector."
+      `${name} was founded ${age} by serial IT entrepreneurs and creators of award-winning web applications. We have 20+ years of experience in the planning, architecture, development, roll-out and management of large-scale enterprise e-commerce solutions. Since 2005 our focus is on the financial sector.`
     );
+    const value = object(label, defaultValue, groupId);
+    const title = text("Title", "EXPERIENCE AND DEDICATION");
+    const textNote = text("Text", content);
     return (
       <div style={value}>
         <Item title={title} text={textNote} light={false} />;
       </div>
     );
   })
-  .add("Item with light", () => {
+  /*.add("Item with light", () => {
     const title = text("Title", "EXPERIENCE AND DEDICATION");
     const textNote = text(
       "Text",
@@ -47,5 +49,5 @@ stories
         <Item title={title} text={textNote} light={true} />;
       </div>
     );
-  })
+  })*/
   .addParameters({ viewport: { defaultViewport: "kindleFire2" } });

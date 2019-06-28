@@ -8,7 +8,7 @@ import Content from "./../components/Content";
 
 storiesOf("Links", module)
   .add(
-    "Simple button with action",
+    "Button with action",
     () => (
       <Button buttonText='With action' handleClick={action("button-click")} />
     ),
@@ -25,13 +25,4 @@ storiesOf("Links", module)
 
   .add("Content", () => <Content />)
 
-  .add("Simple button without action", () => <Button buttonText='No action' />);
-
-/*storiesOf("Link", module)
-  .add("First", () => (
-    <Button
-      buttonText='First'
-      handleClick={LinkTo("Button", "First")}
-    />
-  ))
-  .add("Second", () => <Content />);*/
+  .add("Button without action", () => <Button buttonText='No action' />);
